@@ -1,4 +1,6 @@
-API Endpoints For Ecommerce Application :
+API Endpoints :
+
+Ecommerce Application :
 
 GET : /api/v1/products - request_payload: {}, response_payload: {success: '', error: ''}
 
