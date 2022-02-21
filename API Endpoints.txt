@@ -1,0 +1,11 @@
+API Endpoints For Ecommerce Application :
+
+GET : /api/v1/products - request_payload: {}, response_payload: {success: '', error: ''}
+
+GET : /api/v1/products/:id - request_payload: {id}, response_payload: {success: productObj, error: ''}
+
+POST : /api/v1/products - request_payload: {productObj}, response_payload: {success: '', error: ''}
+
+PUT : /api/v1/products/:id - request_payload: {productObjWithInformationWhichNeedsToBeUpdated}, response_payload: {success: '', error: ''}
+
+DELETE : /api/v1/products/:id - request_payload: {id}, response_payload: {success: '', error: ''}
