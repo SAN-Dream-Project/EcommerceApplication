@@ -1,0 +1,10 @@
+<div class="card mt-5" *ngIf="product">
+  <div class="card-header">
+    <img [src]="product.imgSrc" class="img-fluid" alt=""/>
+  </div>
+  <div class="card-body">
+    <h4><a [routerLink]="['/product-details', product.sNo]">{{ product.title }}</a></h4>
+    <p>{{ product.description }}</p>
+  </div>
+  <button class="btn btn-success mt-2">Add To Cart</button>
+</div>
