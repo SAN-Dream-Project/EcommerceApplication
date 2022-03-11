@@ -61,3 +61,19 @@ System.NullReferenceException: Object reference not set to an instance of an obj
 2022-03-11T11:50:09.7439199+05:30 80000007-0007-ff00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
 2022-03-11T12:30:35.5825293+05:30 0HMG35J978LFD:00000007 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
 2022-03-11T13:20:33.3874837+05:30 80000016-0006-fc00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-11T16:36:22.2362359+05:30 80000023-0007-fd00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-11T16:40:00.4022303+05:30 80000006-0005-fb00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-11T16:40:02.7340057+05:30 80000006-0005-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("73"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-11T16:40:59.1053653+05:30 8000002f-0006-fd00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-11T16:41:00.9680219+05:30 8000002f-0006-fd00-b63f-84710c7967bb [INF] Executed DbCommand ("35"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-11T16:41:21.0318861+05:30 8000000a-0005-fb00-b63f-84710c7967bb [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-11T16:41:21.1177827+05:30 8000000a-0005-fb00-b63f-84710c7967bb [INF] Executed DbCommand ("47"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)

@@ -45,8 +45,8 @@ namespace Ecommerce.Host.Controllers
         [HttpPost("authentication")]
         public IActionResult Authentication([FromBody] UserCredential userCredential)
         {
-            var result =  _userRepository.FindBy(x=>x.UserName== userCredential .UserName && x.Password == userCredential.Password);
-            if (result!=null)
+            var result =  _userRepository.FindBy(x=>x.UserName== userCredential .UserName && x.Password == userCredential.Password).ToList();
+            if (result.Count!=0)
             {
                 var token = jwtAuth.Authentication(userCredential.UserName, userCredential.Password);
                 return Ok(token);
