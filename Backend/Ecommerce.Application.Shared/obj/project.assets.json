@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Ecommerce.Core.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Ecommerce.Core.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Ecommerce.Core.Shared.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Ecommerce.Core.Shared/1.0.0": {
+      "type": "project",
+      "path": "../Ecommerce.Core.Shared/Ecommerce.Core.Shared.csproj",
+      "msbuildProject": "../Ecommerce.Core.Shared/Ecommerce.Core.Shared.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Ecommerce.Core.Shared >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\nitin\\.nuget\\packages\\": {},
@@ -37,7 +56,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "D:\\Dream\\Backend\\Ecommerce.Core.Shared\\Ecommerce.Core.Shared.csproj": {
+              "projectPath": "D:\\Dream\\Backend\\Ecommerce.Core.Shared\\Ecommerce.Core.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,5 +1,5 @@
 ﻿using Ecommerce.Core.Users.Roles;
-using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Users;
+using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Roles;
 using System;
 using System.Collections.Generic;
 using System.Linq;

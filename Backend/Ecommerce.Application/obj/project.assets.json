@@ -1111,6 +1111,9 @@
       "Ecommerce.Application.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Ecommerce.Core.Shared": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/Ecommerce.Application.Shared.dll": {}
         },

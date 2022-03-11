@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Application.Share
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Application", "Ecommerce.Application\Ecommerce.Application.csproj", "{97E51CB1-659C-4D5A-A41B-684C1507C3AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ecommerce.Core.Shared", "Ecommerce.Core.Shared\Ecommerce.Core.Shared.csproj", "{494E7A7D-D4C7-4E54-A60E-2849059AD162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ecommerce.Core.Shared", "Ecommerce.Core.Shared\Ecommerce.Core.Shared.csproj", "{494E7A7D-D4C7-4E54-A60E-2849059AD162}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

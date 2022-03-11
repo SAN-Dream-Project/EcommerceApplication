@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
-using Ecommerce.Application.Shared.Tests.Dto;
-using Ecommerce.Core.Tests;
+using Ecommerce.Application.Shared.UserAndRoles.Roles.Dto;
+using Ecommerce.Application.Shared.UserAndRoles.Users.Dto;
+using Ecommerce.Core.UserAndRoles.Users;
+using Ecommerce.Core.Users.Roles;
 
 namespace Ecommerce.Application
 {
@@ -8,9 +10,10 @@ namespace Ecommerce.Application
     {
         public ModelMappingProfile()
         {
-         CreateMap<Test, TestDto>().ReverseMap();
-         CreateMap<Test, TestInputDto>().ReverseMap();
-         CreateMap<List<Test>, List<TestDto>>().ReverseMap();
-      }
+            CreateMap<Role, RoleDto>().ReverseMap();
+            CreateMap<Role, RoleInputDto>().ReverseMap();
+            CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<User, UserInputDto>().ReverseMap();
+        }
     }
 }

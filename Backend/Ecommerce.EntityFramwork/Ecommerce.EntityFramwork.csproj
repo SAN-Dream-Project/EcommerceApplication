@@ -28,7 +28,6 @@
 
   <ItemGroup>
     <Folder Include="Abstract\UserAndRoles\Roles\" />
-    <Folder Include="Repositories\UserAndRoles\Users\" />
   </ItemGroup>
 
 </Project>

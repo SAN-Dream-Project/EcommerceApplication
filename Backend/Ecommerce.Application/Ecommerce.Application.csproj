@@ -17,8 +17,4 @@
     <ProjectReference Include="..\Ecommerce.EntityFramwork\Ecommerce.EntityFramwork.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="UserAndRoles\Users\" />
-  </ItemGroup>
-
 </Project>

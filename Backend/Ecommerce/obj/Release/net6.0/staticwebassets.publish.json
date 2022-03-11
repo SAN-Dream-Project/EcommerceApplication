@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "xbJLI8zOghlNm3tZruA3/S03dgd3e4OjRytAIngpql0=",
+  "Source": "Ecommerce.Host",
+  "BasePath": "_content/Ecommerce.Host",
+  "Mode": "Default",
+  "ManifestType": "Publish",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

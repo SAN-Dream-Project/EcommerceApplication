@@ -1,5 +1,4 @@
-﻿using Ecommerce.Core.Tests;
-using Ecommerce.Core.UserAndRoles.Users;
+﻿using Ecommerce.Core.UserAndRoles.Users;
 using Ecommerce.Core.Users.Roles;
 using Ecommerce.EntityFramwork.Migrations.Seed;
 using Microsoft.EntityFrameworkCore;

@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Application.Shared.Authentications;
+using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Users;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
@@ -14,17 +15,18 @@ namespace Ecommerce.Application.Authentications
         {
          private readonly string username = "nitingodase";
          private readonly string password = "123qwe";
-         private readonly string key;
+         private readonly string key; 
+         private readonly IUserRepository _userRepository;
          public Auth(string key)
          {
             this.key = key;
          }
          public string Authentication(string username, string password)
          {
-            if (!(username.Equals(username) || password.Equals(password)))
-            {
-               return null;
-            }
+            //if (!(username.Equals(username) || password.Equals(password)))
+            //{
+            //   return null;
+            //}
 
             // 1. Create Security Token Handler
             var tokenHandler = new JwtSecurityTokenHandler();

@@ -30,7 +30,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Dream\\Backend\\Ecommerce.Core.Shared\\Ecommerce.Core.Shared.csproj": {
+                "projectPath": "D:\\Dream\\Backend\\Ecommerce.Core.Shared\\Ecommerce.Core.Shared.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

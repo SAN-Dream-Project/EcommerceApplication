@@ -1,11 +1,17 @@
 ﻿using Ecommerce.Application;
 using Ecommerce.Application.Authentications;
 using Ecommerce.Application.Shared.Authentications;
-using Ecommerce.Application.Shared.Tests;
-using Ecommerce.Application.Tests;
+using Ecommerce.Application.Shared.UserAndRoles.Roles;
+using Ecommerce.Application.Shared.UserAndRoles.Users;
+using Ecommerce.Application.UserAndRoles.Roles;
+using Ecommerce.Application.UserAndRoles.Users;
 using Ecommerce.EntityFramwork;
 using Ecommerce.EntityFramwork.Abstract;
+using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Roles;
+using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Users;
 using Ecommerce.EntityFramwork.Repositories;
+using Ecommerce.EntityFramwork.Repositories.UserAndRoles.Roles;
+using Ecommerce.EntityFramwork.Repositories.UserAndRoles.Users;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -52,8 +58,10 @@ namespace Ecommerce.Host
          });
 
          services.AddSingleton<IJwtAuth>(new Auth(key));
-         services.AddTransient<ITestRepository, TestRepository>();
-         services.AddTransient<ITestAppService, TestAppService>();
+         services.AddTransient<IRoleRepository, RoleRepository>();
+         services.AddTransient<IRoleAppService, RoleAppService>();
+         services.AddTransient<IUserRepository, UserRepository>();
+         services.AddTransient<IUserAppService, UserAppService>();
          services.AddControllers();
          services.AddSwaggerGen(c =>
          {
