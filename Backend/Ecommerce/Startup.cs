@@ -107,7 +107,7 @@ namespace Ecommerce.Host
          });
 
          // global cors policy
-         app.UseCors(x => x
+         app.UseCors(cors => cors
              .AllowAnyMethod()
              .AllowAnyHeader()
              .SetIsOriginAllowed(origin => true) // allow any origin
