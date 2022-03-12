@@ -1,1 +1,9 @@
-<pre>Data : {{ users | json }}</pre>
+<div class="mt-3">
+  <div class="card bg-success text-light" *ngIf="users.length > 0">
+    {{ users | json }}
+  </div>
+  <div class="card bg-danger text-light" *ngIf="error">
+    {{ error }}
+  </div>
+</div>
+
