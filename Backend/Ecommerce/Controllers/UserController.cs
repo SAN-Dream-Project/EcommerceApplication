@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Ecommerce.Host.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -35,7 +35,7 @@ namespace Ecommerce.Host.Controllers
         }
         //Delete User  
         [HttpDelete("DeleteUser")]
-        public async Task DeleteRole(Guid id)
+        public async Task DeleteUser(Guid id)
         {
             try
             {
@@ -64,7 +64,7 @@ namespace Ecommerce.Host.Controllers
         }
         //GET All User by Name  
         [HttpGet("GetById")]
-        public async Task<UserDto> GetRole(Guid id)
+        public async Task<UserDto> GetUser(Guid id)
         {
             try
             {
