@@ -21,8 +21,9 @@ export class AdminDashboardRightRailComponent implements OnInit {
   }
 
   getAllUsers() {
-    this.HttpClient.get(this.URL, this.headerOptions).subscribe(resposeData => {
-      this.users = resposeData;
+    this.HttpClient.get(this.URL, this.headerOptions).subscribe(responseData => {
+      console.table(responseData);
+      this.users = responseData;
     });
   }
 
