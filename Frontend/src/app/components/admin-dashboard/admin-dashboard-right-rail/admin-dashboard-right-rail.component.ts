@@ -11,7 +11,7 @@ export class AdminDashboardRightRailComponent implements OnInit {
 
   URL: string = "http://localhost:5000/api/v1/User/GetAllUser";
   headerOptions: object = {
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im5pdGluZ29kYXNlIiwibmJmIjoxNjQ3MDcwNTAzLCJleHAiOjE2NDcwNzQxMDMsImlhdCI6MTY0NzA3MDUwM30.-6u6zaTJ9iCMiqcgSnKC_xoIMJPeohDwVrnJqQXZ0gM'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Im5pdGluZ29kYXNlIiwibmJmIjoxNjQ3MTAxNTgyLCJleHAiOjE2NDcxMDUxODIsImlhdCI6MTY0NzEwMTU4Mn0.B-gaKSS7VlGpiRm00W0Vzy932pMCOcI1B9LmrvwQMS8'
   };
   users: any = [];
   error: any;

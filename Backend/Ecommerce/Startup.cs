@@ -67,6 +67,7 @@ namespace Ecommerce.Host
          {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "EcommerceAPI", Version = "v1" });
          });
+         services.addCors();
       }
 
       // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.  
@@ -104,6 +105,13 @@ namespace Ecommerce.Host
          {
             endpoints.MapControllers();
          });
+
+         // global cors policy
+         app.UseCors(x => x
+             .AllowAnyMethod()
+             .AllowAnyHeader()
+             .SetIsOriginAllowed(origin => true) // allow any origin
+             .AllowCredentials()); // allow credentials
       }
    }
 }
