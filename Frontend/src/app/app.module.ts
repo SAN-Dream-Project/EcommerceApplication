@@ -17,6 +17,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { AdminDashboardLeftRailComponent } from './components/admin-dashboard/admin-dashboard-left-rail/admin-dashboard-left-rail.component';
 import { AdminDashboardRightRailComponent } from './components/admin-dashboard/admin-dashboard-right-rail/admin-dashboard-right-rail.component';
+import {AdminDashboardModule} from "./admin-dashboard/admin-dashboard/admin-dashboard.module";
 
 @NgModule({
   declarations: [
@@ -37,10 +38,15 @@ import { AdminDashboardRightRailComponent } from './components/admin-dashboard/a
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
-    HttpClientModule
+    AdminDashboardModule
   ],
   providers: [],
+  exports: [
+    AdminDashboardLeftRailComponent,
+    AdminDashboardRightRailComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
