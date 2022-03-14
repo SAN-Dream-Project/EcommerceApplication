@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from "@angular/common/http";
 import { throwError } from "rxjs";
+import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-user-section',
@@ -25,7 +27,7 @@ export class UserSectionComponent implements OnInit {
   users: any = [];
   error: any;
 
-  constructor(private HttpClient: HttpClient) { }
+  constructor(private HttpClient: HttpClient, private toastrService: ToastrService, private ngxSpinnerService: NgxSpinnerService) { }
 
   ngOnInit(): void {
     /*Promise.resolve(() => {
@@ -34,6 +36,7 @@ export class UserSectionComponent implements OnInit {
     then(() => {
       return this.getAllUsers();
     });*/
+    this.ngxSpinnerService.show();
     this.getBearerToken();
     setTimeout(() => {
       this.getAllUsers();
@@ -49,17 +52,21 @@ export class UserSectionComponent implements OnInit {
     });
   }
   getAllUsers() {
+    this.ngxSpinnerService.show();
     this.HttpClient.get(this.URL, { headers: new HttpHeaders().set('Authorization', 'Bearer '+this.bearerToken) }).subscribe((responseData) => {
       console.table(responseData);
       this.users = responseData;
     }, (error) => {
-      console.log(error);
+      //console.log(error);
       this.error = this.handleError(error);
     });
+    setTimeout(() => {
+      this.ngxSpinnerService.hide();
+    }, 500);
   }
 
   private handleError(error: HttpErrorResponse) {
-    console.log(error.error.text);
+    //console.log(error.error.text);
     return error.error.text;
     /*if (error.status === 0) {
       // A client-side or network error occurred. Handle it accordingly.
