@@ -110,7 +110,6 @@ namespace Ecommerce.Host
             {
                 endpoints.MapControllers();
             });
-
             app.UseCors();
         }
     }
