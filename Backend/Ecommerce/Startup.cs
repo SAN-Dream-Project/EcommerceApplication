@@ -25,7 +25,7 @@ namespace Ecommerce.Host
     public class Startup
     {
         private readonly IConfiguration _configuration;
-
+       
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -68,11 +68,7 @@ namespace Ecommerce.Host
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "EcommerceAPI", Version = "v1" });
             });
-            services.AddCors(options =>
-            {
-                options.AddPolicy("Policy11",
-                builder => builder.AllowAnyOrigin());
-            });
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.  
@@ -105,12 +101,12 @@ namespace Ecommerce.Host
             app.UseAuthentication();
 
             app.UseAuthorization();
-
+            app.UseCors(options => options.WithOrigins("http://localhost:4200").AllowAnyMethod().AllowAnyHeader());
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
-            app.UseCors();
+          
         }
     }
 }
