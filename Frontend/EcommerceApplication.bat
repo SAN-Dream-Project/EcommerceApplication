@@ -1,0 +1,1 @@
+powershell.exe ng serve -o

@@ -1,0 +1,309 @@
+2022-03-12T09:48:27.1452801+05:30 0HMG3RTDAAE1T:00000002 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2022-03-12T09:48:31.0639535+05:30 0HMG3RTDAAE1T:00000002 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T09:48:34.5839870+05:30 0HMG3RTDAAE1T:00000002 [INF] Executed DbCommand ("137"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T10:34:01.6042952+05:30 0HMG3SMSIDMV1:00000002 [WRN] Failed to determine the https port for redirect. (ca76cc21)
+2022-03-12T10:34:29.7936102+05:30 0HMG3SMSIDMV1:00000003 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T10:34:40.8614689+05:30 0HMG3SMSIDMV1:00000003 [ERR] An error occurred using the connection to database '"EcommerceDb"' on server '"ADK"'. (5fc3407c)
+2022-03-12T10:34:41.3725056+05:30 0HMG3SMSIDMV1:00000003 [ERR] An exception occurred while iterating over the results of a query for context type '"Ecommerce.EntityFramwork.EcommerceContext"'."
+""System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database \"EcommerceDb\" requested by the login. The login failed.
+Login failed for user 'ADK\ADK'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:878e1dcd-61f2-4a90-b8b9-77598f3959fa
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()" (f5c7ac34)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "EcommerceDb" requested by the login. The login failed.
+Login failed for user 'ADK\ADK'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:878e1dcd-61f2-4a90-b8b9-77598f3959fa
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Ecommerce.Host.Controllers.TokenAuthenticationController.Authentication(UserCredential userCredential) in D:\Dream\Backend\Ecommerce\Controllers\TokenAuthenticationController.cs:line 48
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+2022-03-12T10:34:41.5273654+05:30 0HMG3SMSIDMV1:00000003 [ERR] An unhandled exception has occurred while executing the request. (48a46595)
+System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "EcommerceDb" requested by the login. The login failed.
+Login failed for user 'ADK\ADK'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:878e1dcd-61f2-4a90-b8b9-77598f3959fa
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Ecommerce.Host.Controllers.TokenAuthenticationController.Authentication(UserCredential userCredential) in D:\Dream\Backend\Ecommerce\Controllers\TokenAuthenticationController.cs:line 48
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-03-12T10:34:41.5668689+05:30 0HMG3SMSIDMV1:00000003 [ERR] Connection id ""0HMG3SMSIDMV1"", Request id ""0HMG3SMSIDMV1:00000003"": An unhandled exception was thrown by the application. (560e7d32)
+System.InvalidOperationException: The exception handler configured on ExceptionHandlerOptions produced a 404 status response. This InvalidOperationException containing the original exception was thrown since this is often due to a misconfigured ExceptionHandlingPath. If the exception handler is expected to return 404 status responses then set AllowStatusCode404Response to true.
+ ---> System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure' to the 'UseSqlServer' call.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot open database "EcommerceDb" requested by the login. The login failed.
+Login failed for user 'ADK\ADK'.
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.TdsParser.Run(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.CompleteLogin(Boolean enlistOK)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.AttemptOneLogin(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean ignoreSniOpenTimeout, TimeoutTimer timeout, Boolean withFailover)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.LoginNoFailover(ServerInfo serverInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString connectionOptions, SqlCredential credential, TimeoutTimer timeout)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds.OpenLoginEnlist(TimeoutTimer timeout, SqlConnectionString connectionOptions, SqlCredential credential, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance)
+   at Microsoft.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, Boolean applyTransientFaultHandling, String accessToken, DbConnectionPool pool)
+   at Microsoft.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at Microsoft.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at Microsoft.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry, SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open(SqlConnectionOverrides overrides)
+   at Microsoft.Data.SqlClient.SqlConnection.Open()
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerConnection.OpenDbConnection(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.OpenInternal(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalConnection.Open(Boolean errorsExpected)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__19_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+ClientConnectionId:878e1dcd-61f2-4a90-b8b9-77598f3959fa
+Error Number:4060,State:1,Class:11
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Ecommerce.Host.Controllers.TokenAuthenticationController.Authentication(UserCredential userCredential) in D:\Dream\Backend\Ecommerce\Controllers\TokenAuthenticationController.cs:line 48
+   at lambda_method1(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.HandleException(HttpContext context, ExceptionDispatchInfo edi)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2022-03-12T10:38:35.4508010+05:30 0HMG3SMSIDMV2:00000002 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T10:38:35.5884600+05:30 0HMG3SMSIDMV2:00000002 [INF] Executed DbCommand ("71"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T10:46:10.5917916+05:30 0HMG3SMSIDMV3:00000002 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T10:46:10.9223561+05:30 0HMG3SMSIDMV3:00000002 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreatedBy], [CreatedDate], [DeleteDate], [DeletedBy], [FirstName], [Gender], [LastName], [ModifiedBy], [ModifiedDate], [Password], [PrimaryMobNo], [SecondaryMobNo], [Status], [TelephoneNo], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);" (0723d8ff)
+2022-03-12T10:48:08.2934924+05:30 0HMG3SMSIDMV3:00000004 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T10:48:08.3228936+05:30 0HMG3SMSIDMV3:00000004 [INF] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:03:55.9269580+05:30 0HMG3SMSIDMV4:00000002 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:03:55.9383908+05:30 0HMG3SMSIDMV4:00000002 [INF] Executed DbCommand ("1"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreatedBy], [CreatedDate], [DeleteDate], [DeletedBy], [FirstName], [Gender], [LastName], [ModifiedBy], [ModifiedDate], [Password], [PrimaryMobNo], [SecondaryMobNo], [Status], [TelephoneNo], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);" (0723d8ff)
+2022-03-12T11:04:01.5145705+05:30 0HMG3SMSIDMV4:00000003 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:04:01.5432801+05:30 0HMG3SMSIDMV4:00000003 [INF] Executed DbCommand ("27"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:04:02.3531717+05:30 0HMG3SMSIDMV4:00000004 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:04:02.3552686+05:30 0HMG3SMSIDMV4:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:04:02.9614715+05:30 0HMG3SMSIDMV4:00000005 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:04:02.9649867+05:30 0HMG3SMSIDMV4:00000005 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:27:26.8499708+05:30 0HMG3SMSIDMV9:00000002 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:27:27.0307468+05:30 0HMG3SMSIDMV9:00000002 [INF] Executed DbCommand ("79"ms) [Parameters=["@__id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0" (0723d8ff)
+2022-03-12T11:27:49.3178396+05:30 0HMG3SMSIDMV9:00000003 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:27:49.3234595+05:30 0HMG3SMSIDMV9:00000003 [INF] Executed DbCommand ("4"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T11:27:50.7523021+05:30 0HMG3SMSIDMV9:00000004 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:27:50.7551782+05:30 0HMG3SMSIDMV9:00000004 [INF] Executed DbCommand ("1"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T11:28:44.1318013+05:30 0HMG3SMSIDMV9:00000005 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:28:44.1400271+05:30 0HMG3SMSIDMV9:00000005 [INF] Executed DbCommand ("5"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreatedBy], [CreatedDate], [DeleteDate], [DeletedBy], [FirstName], [Gender], [LastName], [ModifiedBy], [ModifiedDate], [Password], [PrimaryMobNo], [SecondaryMobNo], [Status], [TelephoneNo], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);" (0723d8ff)
+2022-03-12T11:28:55.8244158+05:30 0HMG3SMSIDMV9:00000006 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:28:55.8283490+05:30 0HMG3SMSIDMV9:00000006 [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:29:15.2011280+05:30 0HMG3SMSIDMV9:00000007 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:29:15.2061359+05:30 0HMG3SMSIDMV9:00000007 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:29:15.9293029+05:30 0HMG3SMSIDMV9:00000008 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:29:15.9313844+05:30 0HMG3SMSIDMV9:00000008 [INF] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T11:29:16.2823640+05:30 0HMG3SMSIDMV9:00000009 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T11:29:16.2835584+05:30 0HMG3SMSIDMV9:00000009 [INF] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T13:05:02.9389076+05:30 0HMG3SMSIDMVG:0000000C [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T13:05:03.4467611+05:30 0HMG3SMSIDMVG:0000000C [INF] Executed DbCommand ("51"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T13:06:09.8755771+05:30 0HMG3SMSIDMVG:0000000D [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T13:06:10.0010152+05:30 0HMG3SMSIDMVG:0000000D [INF] Executed DbCommand ("121"ms) [Parameters=["@__id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0" (0723d8ff)
+2022-03-12T13:06:12.0550352+05:30 0HMG3SMSIDMVG:0000000E [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T13:06:12.0589626+05:30 0HMG3SMSIDMVG:0000000E [INF] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T21:43:02.4063299+05:30 0HMG3SMSIDMVI:00000003 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T21:43:02.9476419+05:30 0HMG3SMSIDMVI:00000003 [INF] Executed DbCommand ("32"ms) [Parameters=["@__userCredential_UserName_0='?' (Size = 4000), @__userCredential_Password_1='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE ([u].[UserName] = @__userCredential_UserName_0) AND ([u].[Password] = @__userCredential_Password_1)" (0723d8ff)
+2022-03-12T21:43:32.2890926+05:30 0HMG3SMSIDMVI:00000004 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T21:43:32.3020176+05:30 0HMG3SMSIDMVI:00000004 [INF] Executed DbCommand ("6"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 4000), @p2='?' (DbType = DateTime2), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Int32), @p7='?' (Size = 4000), @p8='?' (Size = 4000), @p9='?' (DbType = DateTime2), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Id], [CreatedBy], [CreatedDate], [DeleteDate], [DeletedBy], [FirstName], [Gender], [LastName], [ModifiedBy], [ModifiedDate], [Password], [PrimaryMobNo], [SecondaryMobNo], [Status], [TelephoneNo], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15);" (0723d8ff)
+2022-03-12T21:43:43.8388289+05:30 0HMG3SMSIDMVI:00000005 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T21:43:43.8439415+05:30 0HMG3SMSIDMVI:00000005 [INF] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]" (0723d8ff)
+2022-03-12T21:43:49.3860478+05:30 0HMG3SMSIDMVI:00000006 [INF] Entity Framework Core "6.0.0" initialized '"EcommerceContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer":"6.0.0"' with options: "None" (d2805559)
+2022-03-12T21:43:49.3968789+05:30 0HMG3SMSIDMVI:00000006 [INF] Executed DbCommand ("7"ms) [Parameters=["@__id_0='?' (DbType = Guid)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [u].[Id], [u].[CreatedBy], [u].[CreatedDate], [u].[DeleteDate], [u].[DeletedBy], [u].[FirstName], [u].[Gender], [u].[LastName], [u].[ModifiedBy], [u].[ModifiedDate], [u].[Password], [u].[PrimaryMobNo], [u].[SecondaryMobNo], [u].[Status], [u].[TelephoneNo], [u].[UserName]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__id_0" (0723d8ff)
