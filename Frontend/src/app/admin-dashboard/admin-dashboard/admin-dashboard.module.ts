@@ -11,6 +11,7 @@ import { AdminDashboardRightRailComponent } from "./admin-dashboard-right-rail/a
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminFooterComponent } from './admin-footer/admin-footer.component';
 import { AdminBodyComponent } from './admin-body/admin-body.component';
+import {NgxSpinnerModule} from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AdminBodyComponent } from './admin-body/admin-body.component';
   imports: [
     CommonModule,
     HttpClientModule,
-    AdminDashboardRoutingModule
+    AdminDashboardRoutingModule,
+    NgxSpinnerModule
   ]
 })
 export class AdminDashboardModule { }

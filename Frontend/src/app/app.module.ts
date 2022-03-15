@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+
+import { ToastrModule } from 'ngx-toastr';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +22,7 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { AdminDashboardLeftRailComponent } from './components/admin-dashboard/admin-dashboard-left-rail/admin-dashboard-left-rail.component';
 import { AdminDashboardRightRailComponent } from './components/admin-dashboard/admin-dashboard-right-rail/admin-dashboard-right-rail.component';
 import {AdminDashboardModule} from "./admin-dashboard/admin-dashboard/admin-dashboard.module";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -38,9 +43,18 @@ import {AdminDashboardModule} from "./admin-dashboard/admin-dashboard/admin-dash
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    AdminDashboardModule
+    AdminDashboardModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule,
+    ToastrModule.forRoot({
+      timeOut: 3000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true
+    })
   ],
   providers: [],
   exports: [
