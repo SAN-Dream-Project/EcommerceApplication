@@ -1,4 +1,5 @@
 ﻿using Ecommerce.Application.Shared.Authentications;
+using Ecommerce.Application.Shared.Authentications.Dto;
 using Ecommerce.EntityFramwork.Abstract.UserAndRoles.Users;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -21,14 +22,9 @@ namespace Ecommerce.Application.Authentications
          {
             this.key = key;
          }
-         public string Authentication(string username, string password)
+         public TokenOutputDto Authentication(string username, string password)
          {
-            //if (!(username.Equals(username) || password.Equals(password)))
-            //{
-            //   return null;
-            //}
-
-            // 1. Create Security Token Handler
+            TokenOutputDto tokenOutput =new TokenOutputDto();
             var tokenHandler = new JwtSecurityTokenHandler();
 
             // 2. Create Private Key to Encrypted
@@ -46,11 +42,13 @@ namespace Ecommerce.Application.Authentications
                SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
+            tokenOutput.ExpireTime = tokenDescriptor.Expires;
             //4. Create Token
             var token = tokenHandler.CreateToken(tokenDescriptor);
-
+            var tokenString = tokenHandler.WriteToken(token);
+            tokenOutput.Token = tokenString;
             // 5. Return Token from method
-            return tokenHandler.WriteToken(token);
+            return tokenOutput;
          }
       }
    }

@@ -14,31 +14,13 @@ namespace Ecommerce.Host.Controllers
     {
         private readonly IJwtAuth jwtAuth;
         private readonly IUserRepository _userRepository;
-        private readonly List<User> lstMember = new List<User>()
-        {
-            new User{Id=1, Name="nitin" },
-            new User {Id=2, Name="Ashu" },
-            new User{Id=3, Name="sachin"}
-        };
         //For every request we need to pass this in header ---> Key - authorized, and value -token
         public TokenAuthenticationController(IJwtAuth jwtAuth, IUserRepository userRepository)
         {
             this.jwtAuth = jwtAuth;
             _userRepository = userRepository;
         }
-        // GET: api/<MembersController>
-        [HttpGet]
-        public IEnumerable<User> AllMembers()
-        {
-            return lstMember;
-        }
-
-        // GET api/<MembersController>/5
-        [HttpGet("{id}")]
-        public User MemberByid(int id)
-        {
-            return lstMember.Find(x => x.Id == id);
-        }
+       
 
         [AllowAnonymous]
         // POST api/<MembersController>

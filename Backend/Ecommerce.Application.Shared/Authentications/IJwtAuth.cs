@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ecommerce.Application.Shared.Authentications.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,6 @@ namespace Ecommerce.Application.Shared.Authentications
 {
    public interface IJwtAuth
    {
-      string Authentication(string username, string password);
+        TokenOutputDto Authentication(string username, string password);
    }
 }
